@@ -411,7 +411,7 @@ local function getSigmaApproval(message)
 	end);
 	local sigmaYesButton = Instance.new("TextButton", sigmaMainContentArea);
 	sigmaYesButton.Size, sigmaYesButton.Position = UDim2.new(0.38, 0, 0, 35), UDim2.new(0.05, 0, 1, -25);
-	sigmaYesButton.Text, sigmaYesButton.Font = "✅ Yes", Enum.Font.GothamBold;
+	sigmaYesButton.Text, sigmaYesButton.Font = "Accept", Enum.Font.GothamBold;
 	sigmaYesButton.TextColor3, sigmaYesButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255), Color3.fromRGB(40, 40, 40);
 	sigmaYesButton.TextSize = sigmaButtonFontSize;
 	sigmaYesButton.Name = "SigmaYesButton";
