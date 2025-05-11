@@ -1,6 +1,4 @@
 
---ANTI VIRUS
-
 local MAX_SIGMA_REDIRECTS = 5;
 getgenv().lastSigmaUiSpot = nil;
 getgenv().isSigmaPromptPopping = false;
@@ -321,23 +319,13 @@ local function getSigmaApproval(message)
 	local sigmaAutoAcceptDesc = Instance.new("TextLabel", sigmaSettingsArea);
 	sigmaAutoAcceptDesc.Size = UDim2.new(0.9, 0, 0, 50);
 	sigmaAutoAcceptDesc.Position = UDim2.new(0.05, 0, 0, 80);
-	sigmaAutoAcceptDesc.Text = "Toggles automatic acceptance of all security prompts. When ON, all actions will be allowed without prompting. Use with extreme caution!";
+	sigmaAutoAcceptDesc.Text = "Toggle to automatically allow all actions without prompting. USE WITH EXTREME CAUTION!";
 	sigmaAutoAcceptDesc.Font = Enum.Font.Gotham;
 	sigmaAutoAcceptDesc.TextSize = sigmaButtonFontSize - 2;
 	sigmaAutoAcceptDesc.TextColor3 = Color3.fromRGB(200, 200, 200);
 	sigmaAutoAcceptDesc.BackgroundTransparency = 1;
 	sigmaAutoAcceptDesc.TextWrapped = true;
 	sigmaAutoAcceptDesc.TextXAlignment = Enum.TextXAlignment.Center;
-	local sigmaAutoAcceptStatus = Instance.new("TextLabel", sigmaSettingsArea);
-	sigmaAutoAcceptStatus.Size = UDim2.new(0.9, 0, 0, 30);
-	sigmaAutoAcceptStatus.Position = UDim2.new(0.05, 0, 0, 140);
-	sigmaAutoAcceptStatus.Text = "Current Status: Security prompts will be shown";
-	sigmaAutoAcceptStatus.Font = Enum.Font.GothamBold;
-	sigmaAutoAcceptStatus.TextSize = sigmaButtonFontSize - 1;
-	sigmaAutoAcceptStatus.TextColor3 = Color3.fromRGB(100, 255, 100);
-	sigmaAutoAcceptStatus.BackgroundTransparency = 1;
-	sigmaAutoAcceptStatus.TextWrapped = true;
-	sigmaAutoAcceptStatus.TextXAlignment = Enum.TextXAlignment.Center;
 	local function updateSigmaLogDisplay()
 		if not sigmaLogScrollFrame then
 			return;
@@ -412,22 +400,18 @@ local function getSigmaApproval(message)
 		if getgenv().isAutoAcceptEnabled then
 			sigmaAutoAcceptButton.Text = "Toggle Auto-Accept: ON";
 			sigmaAutoAcceptButton.BackgroundColor3 = Color3.fromRGB(150, 60, 60);
-			sigmaAutoAcceptStatus.Text = "Current Status: All actions will be automatically accepted!";
-			sigmaAutoAcceptStatus.TextColor3 = Color3.fromRGB(255, 100, 100);
-			blastToSigmaLog(string.format("[%s] Auto-Accept enabled (toggle mode)", os.date("%H:%M:%S")));
-			print("UltraSigmaGuard: Auto-Accept enabled (toggle mode)");
+			blastToSigmaLog(string.format("[%s] Auto-Accept enabled", os.date("%H:%M:%S")));
+			print("UltraSigmaGuard: Auto-Accept enabled");
 		else
 			sigmaAutoAcceptButton.Text = "Toggle Auto-Accept: OFF";
 			sigmaAutoAcceptButton.BackgroundColor3 = Color3.fromRGB(60, 60, 60);
-			sigmaAutoAcceptStatus.Text = "Current Status: Security prompts will be shown";
-			sigmaAutoAcceptStatus.TextColor3 = Color3.fromRGB(100, 255, 100);
-			blastToSigmaLog(string.format("[%s] Auto-Accept disabled (toggle mode)", os.date("%H:%M:%S")));
-			print("UltraSigmaGuard: Auto-Accept disabled (toggle mode)");
+			blastToSigmaLog(string.format("[%s] Auto-Accept disabled", os.date("%H:%M:%S")));
+			print("UltraSigmaGuard: Auto-Accept disabled");
 		end
 	end);
 	local sigmaYesButton = Instance.new("TextButton", sigmaMainContentArea);
 	sigmaYesButton.Size, sigmaYesButton.Position = UDim2.new(0.38, 0, 0, 35), UDim2.new(0.05, 0, 1, -25);
-	sigmaYesButton.Text, sigmaYesButton.Font = "✅ Yes", Enum.Font.GothamBold;
+	sigmaYesButton.Text, sigmaYesButton.Font = "Accept", Enum.Font.GothamBold;
 	sigmaYesButton.TextColor3, sigmaYesButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255), Color3.fromRGB(40, 40, 40);
 	sigmaYesButton.TextSize = sigmaButtonFontSize;
 	sigmaYesButton.Name = "SigmaYesButton";
@@ -1329,4 +1313,4 @@ Allow this %s?]], (sigmaIsRejoin and "Rejoin the current game server.") or "Tele
 		print("UltraSigmaGuard: TeleportService:" .. sigmaMethodName .. " not found or not a function, cannot hook.");
 	end
 end
--- anti virus
+print("UltraSigmaGuard+ by CoverEu is now active and watching network/file activity.");
